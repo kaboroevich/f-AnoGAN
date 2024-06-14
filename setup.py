@@ -4,7 +4,9 @@ install_requires = [
     "numpy",
     "matplotlib",
     "torch",
-    "lightning"
+    "lightning",
+    "ipywidgets",
+    "IPython"
 ]
 
 setup(
@@ -16,5 +18,5 @@ setup(
     author="Keith A. Boroevich",
     author_email="kaboroevich@gmail.com",
     description="Implementation of a 1D f-AnoGAN in PyTorch.",
-    install_requires=install_requires,
+    install_requires=install_requires
 )
