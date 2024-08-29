@@ -109,7 +109,7 @@ class GoodGenerator1d(nn.Module):
         z = self.block2(z) + self.shcut2(z)
         z = self.block3(z) + self.shcut3(z)
         z = self.block4(z) + self.shcut4(z)
-        z = self.conv(z).squeeze()
+        z = self.conv(z).squeeze(1)
         return z
 
 
@@ -164,7 +164,7 @@ class GoodEncoder1d(nn.Module):
         # Following line should be identity but that doesn't work
         x = self.block4(x) + self.shcut4(x)
         x = x.view(-1, 512 * self.dim // 16)
-        x = self.linear(x.squeeze())
+        x = self.linear(x.squeeze(1))
         return x
 
 

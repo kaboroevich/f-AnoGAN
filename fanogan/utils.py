@@ -20,7 +20,7 @@ def get_prediction_loop(model, dataloader: DataLoader,
         f = IntProgress(min=0, max=len(dataloader))
         display(f)
     with torch.no_grad():
-        device = model.device()
+        device = model.device
         model.eval()
         for batch_idx, batch in enumerate(dataloader):
             batch[0] = batch[0].to(device)
